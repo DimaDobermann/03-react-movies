@@ -1,13 +1,13 @@
 import { useState } from "react";
 import toast from "react-hot-toast";
-import SearchBar from "./components/SearchBar/SearchBar";
-import MovieGrid from "./components/MovieGrid/MovieGrid";
-import Loader from "./components/Loader/Loader";
-import ErrorMessage from "./components/ErrorMessage/ErrorMessage";
-import MovieModal from "./components/MovieModal/MovieModal";
-import { fetchMovies } from "./services/movieService";
-import type { Movie } from "./types/movie";
-import "./App.css";
+import SearchBar from "../SearchBar/SearchBar";
+import MovieGrid from "../MovieGrid/MovieGrid";
+import Loader from "../Loader/Loader";
+import ErrorMessage from "../ErrorMessage/ErrorMessage";
+import MovieModal from "../MovieModal/MovieModal";
+import { fetchMovies } from "../../services/movieService";
+import type { Movie } from "../../types/movie";
+import styles from "./App.module.css";
 
 export default function App() {
   const [movies, setMovies] = useState<Movie[]>([]);
@@ -36,10 +36,10 @@ export default function App() {
   }
 
   return (
-    <div className="app">
+    <div className={styles.app}>
       <SearchBar onSubmit={handleSearch} />
 
-      <main className="main">
+      <main className={styles.main}>
         {loading && <Loader />}
         {error && <ErrorMessage />}
 
