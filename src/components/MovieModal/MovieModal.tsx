@@ -43,10 +43,10 @@ export default function MovieModal({ movie, onClose }: MovieModalProps) {
           &times;
         </button>
 
-        {movie.poster_path && (
+        {movie.backdrop_path && (
           <img
             className={styles.image}
-            src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+            src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`}
             alt={movie.title}
           />
         )}
